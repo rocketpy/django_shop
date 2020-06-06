@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
-{% load static %}
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -11,13 +9,12 @@
   <meta name="author" content="">
 
   <title>Shop Item</title>
-
+  {% load static %}
   <!-- Bootstrap core CSS -->
-  <link href="vendor_item/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="static\vendor_item\bootstrap\css\bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="{% static 'css/shop-item.css' %} rel="stylesheet">
+  <link href="{% static 'css\shop-item.css' %}" rel="stylesheet">
 
 </head>
 
@@ -110,14 +107,14 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Rocketpy 2020</p>
     </div>
     <!-- /.container -->
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor_item/jquery/jquery.min.js"></script>
-  <script src="vendor_item/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static\vendor_item\jquery\jquery.min.js"></script>
+  <script src="static\vendor_item\bootstrap\js\bootstrap.bundle.min.js"></script>
 
 </body>
 
