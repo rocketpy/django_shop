@@ -11,10 +11,10 @@
   <title>Shop Homepage</title>
   {% load static %}
   <!-- Bootstrap core CSS -->
-  <link href="static\vendor_homepage\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'vendor_homepage/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="{% static 'css\shop-homepage.css' %}" rel="stylesheet">
+  <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -75,13 +75,13 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="{% static 'images\img_1.jpg' %}" alt="First slide">
+              <img class="d-block img-fluid" src="{% static 'images/img_1.jpg' %}" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="{% static 'images\img_2.jpg' %}" alt="Second slide">
+              <img class="d-block img-fluid" src="{% static 'images/img_2.jpg' %}" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="{% static 'images\img_3.jpg' %}" alt="Third slide">
+              <img class="d-block img-fluid" src="{% static 'images/img_3.jpg' %}" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -213,8 +213,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="static\vendor_homepage\jquery\jquery.min.js"></script>
-  <script src="static\vendor_homepage\bootstrap\js\bootstrap.bundle.min.js"></script>
+  <script src="{% static 'vendor_homepage/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor_homepage/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
 
