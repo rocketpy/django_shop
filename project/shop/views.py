@@ -21,6 +21,19 @@ def contacts(request):
 def items(request):
     return render(request, 'templ/item.html')
 
+
+def notebooks(request):
+    return render(request, 'templ/notebooks.html')
+
+
+def tablets(request):
+    return render(request, 'templ/tablets.html')
+
+
+def smartphones(request):
+    return render(request, 'templ/smartphones.html')
+
+
 # def index(request):
 #    return TemplateResponse(request,  "shop/base.html")
 

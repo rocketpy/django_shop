@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+
+
+
+#  for update use:  python manage.py makemigrations blog_app
+# second command:  python manage.py migrate blog_app
