@@ -1,76 +1,13 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Shop Homepage</title>
-  {% load static %}
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'vendor_homepage/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template -->
-  <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet" type="text/css">
-
-</head>
-
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'about' %}">Start</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'services' %}">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacts' %}">Contacts</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <h1 class="my-4">E'store</h1>
-        <div class="list-group">
-          <a href="{% url 'notebooks' %}" class="list-group-item">Notebooks</a>
-          <a href="{% url 'smartphones' %}" class="list-group-item">Smartphones</a>
-          <a href="{% url 'tablets' %}" class="list-group-item">Tablets</a>
-        </div>
-
-      </div>
-      <!-- /.col-lg-3 -->
+{% extends 'templ/home.html' %}
 
 
+{% block content %}
+{% load static %}
         <div class="row">
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{% static 'images/img_n1.jpg' %}" alt=""></a>
+              <a href="#"><img class="card-img-top" src="{% static 'images/img_s6.jpg' %}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Item One</a>
@@ -86,7 +23,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{% static 'images/img_n2.jpg' %}" alt=""></a>
+              <a href="#"><img class="card-img-top" src="{% static 'images/img_s5.jpg' %}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Item Two</a>
@@ -102,7 +39,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{% static 'images/img_n3.jpg' %}" alt=""></a>
+              <a href="#"><img class="card-img-top" src="{% static 'images/img_s3.jpg' %}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Item Three</a>
@@ -118,7 +55,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{% static 'images/img_n4.jpg' %}" alt=""></a>
+              <a href="#"><img class="card-img-top" src="{% static 'images/img_s3.jpg' %}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Item Four</a>
@@ -134,7 +71,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{% static 'images/img_n5.jpg' %}" alt=""></a>
+              <a href="#"><img class="card-img-top" src="{% static 'images/img_s5.jpg' %}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Item Five</a>
@@ -150,7 +87,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="{% static 'images/img_n2.jpg' %}" alt=""></a>
+              <a href="#"><img class="card-img-top" src="{% static 'images/img_s6.jpg' %}" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a href="#">Item Six</a>
@@ -165,29 +102,5 @@
           </div>
 
         </div>
-        <!-- /.row -->
 
-      </div>
-      <!-- /.col-lg-9 -->
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Rocketpy 2020</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor_homepage/jquery/jquery.min.js' %}" type="text/javascript"></script>
-  <script src="{% static 'vendor_homepage/bootstrap/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
-
-</body>
-
-</html>
+{% endblock %}
