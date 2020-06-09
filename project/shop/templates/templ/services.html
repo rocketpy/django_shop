@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Services</title>
-    {% load static %}
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'vendor_homepage/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+{% extends 'templ/menu.html' %}
 
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-    {% block content %}
+
+{% block content %}
+{% load static %}
     <div class="text-page">
         <section>
             <h2>Доставка и оплата</h2>
@@ -34,10 +24,4 @@
             <img src="https://i2.rozetka.ua/images/49/49640.gif" style="width: auto;height: auto;max-width: 100%;max-height: 100%;">
         </section>
     </div>
-    {% endblock %}
-
-<!-- Bootstrap core JavaScript -->
-<script src="{% static 'vendor_homepage/jquery/jquery.min.js' %}" type="text/javascript"></script>
-<script src="{% static 'vendor_homepage/bootstrap/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
-</body>
-</html>
+{% endblock %}
