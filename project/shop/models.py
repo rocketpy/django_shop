@@ -2,10 +2,10 @@ from django.db import models
 
 
 class Item(models.Model):
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    name = models.CharField(max_length=20)
+    prod_name = models.CharField(max_length=50)
+    prod_descrip = models.TextField()
     price = models.IntegerField()
+    img_url = models.ImageField()
 
 
 #  for update use:  python manage.py makemigrations shop
