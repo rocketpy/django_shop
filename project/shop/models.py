@@ -8,5 +8,5 @@ class Item(models.Model):
     price = models.IntegerField()
 
 
-#  for update use:  python manage.py makemigrations blog_app
-# second command:  python manage.py migrate blog_app
+#  for update use:  python manage.py makemigrations shop
+# second command:  python manage.py migrate shop
