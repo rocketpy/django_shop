@@ -35,7 +35,7 @@ def smartphones(request):
 
 
 def cart(request):
-    return render(request, 'templ/.html')
+    return render(request, 'templ/cart.html')
 
 
 # def index(request):
