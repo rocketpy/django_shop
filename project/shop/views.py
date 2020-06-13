@@ -34,6 +34,10 @@ def smartphones(request):
     return render(request, 'templ/smartphones.html')
 
 
+def cart(request):
+    return render(request, 'templ/.html')
+
+
 # def index(request):
 #    return TemplateResponse(request,  "shop/base.html")
 
