@@ -65,10 +65,21 @@ class ShoppingCart(models.Model):
     def __init__(self, customer_name):
         self.customer_name = customer_name
         
+        
     def add_item(self, product, price):
         if not product in self.items_in_cart:
             self.items_in_cart[product] = price
-            
+            print(product + " is added !")
+        else:
+            print(product + " is already in the cart !")
+    
+    
+    def remove_item(self, product):
+        if product in self.items_in_cart:
+            del self.item_in_cart[product]
+            print(product + " is removed !")
+        else:
+            print(product + " is not in the cart !")
 """
 
 #  for update use:  python manage.py makemigrations shop
