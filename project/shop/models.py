@@ -59,5 +59,17 @@ class ProductImage(models.Model):
         verbose_name_plural = 'Images'
 """
 
+"""
+class ShoppingCart(models.Model):
+    items_in_cart = {}
+    def __init__(self, customer_name):
+        self.customer_name = customer_name
+        
+    def add_item(self, product, price):
+        if not product in self.items_in_cart:
+            self.items_in_cart[product] = price
+            
+"""
+
 #  for update use:  python manage.py makemigrations shop
 # second command:  python manage.py migrate shop
