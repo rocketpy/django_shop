@@ -38,6 +38,14 @@ def cart(request):
     return render(request, 'templ/cart.html')
 
 
+def login(request):
+    return render(request, 'templ/cart.html')
+
+
+def logout(request):
+    return render(request, 'templ/cart.html')
+
+
 # def index(request):
 #    return TemplateResponse(request,  "shop/base.html")
 
