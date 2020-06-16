@@ -53,14 +53,14 @@ class ProductCategory(models.Model):
         verbose_name = 'Product category'
         verbose_name_plural = 'Categories'
 
-"""
+
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, blank=True, null=True, default=None)
     image = models.ImageField(upload_to='products_images/%Y%m%d', null=True)
-    is_main = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True, auto_now=False)
-    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    # is_main = models.BooleanField(default=False)
+    # is_active = models.BooleanField(default=True)
+    # created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    # updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
         return '%s' % self.product.name
@@ -68,9 +68,8 @@ class ProductImage(models.Model):
     class Meta:
         verbose_name = 'Image'
         verbose_name_plural = 'Images'
-"""
 
-"""
+
 class ShoppingCart(models.Model):
     items_in_cart = {}
     def __init__(self, customer_name):
@@ -91,7 +90,7 @@ class ShoppingCart(models.Model):
             print(product + " is removed !")
         else:
             print(product + " is not in the cart !")
-"""
+
 
 #  for update use:  python manage.py makemigrations shop
 # second command:  python manage.py migrate shop
