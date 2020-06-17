@@ -11,13 +11,6 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
-
-class Item(models.Model):
-    prod_name = models.CharField(max_length=50)
-    prod_descrip = models.TextField()
-    price = models.IntegerField()
-    img_url = models.ImageField()
-    
     
 class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
