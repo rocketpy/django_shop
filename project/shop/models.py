@@ -19,28 +19,23 @@ class Item(models.Model):
     img_url = models.ImageField()
     
     
-"""
 class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
     price = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    # discount = models.IntegerField(default=0, )
     category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None)
     description = models.TextField(blank=True, null=True, default=None)
     # short_description = models.TextField(blank=True, null=True, default=None)
-    # comments = models.TextField(blank=True, null=False, default=None)
-    # created = models.DateTimeField(auto_now_add=True, auto_now=False)
-    # updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-    is_active = models.BooleanField(default=True)
-
+    # is_active = models.BooleanField(default=True)
+    # discount = models.IntegerField(default=0, )
 
     def __str__(self):
         return 'Order %s' % self.name
 
+    
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
-"""
     
 class ProductCategory(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
