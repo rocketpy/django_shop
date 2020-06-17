@@ -11,5 +11,6 @@ urlpatterns = [
                path('notebooks/', views.notebooks, name='notebooks'),
                path('smartphones/', views.smartphones, name='smartphones'),
                path('tablets/', views.tablets, name='tablets'),
-               path('cart/', views.cart, name='cart')
+               path('cart/', views.cart, name='cart'),
+               path(r'^product/(?P<product_id>\w+)/$', views.product, name='product')
                ]
