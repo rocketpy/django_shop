@@ -1,5 +1,5 @@
 from django.shortcuts import render
-# from django.template.response import TemplateResponse
+from . models import *
 
 
 def index(request):
@@ -46,6 +46,13 @@ def logout(request):
     return render(request, 'templ/cart.html')
 
 
-# def index(request):
-#    return TemplateResponse(request,  "shop/base.html")
+def product(request, product_id):
+    product = Product.objects.get(id=product_id)
 
+    session_key = request.session.session_key
+    
+    if not session_key:
+        # request.session["session_key"] = 123 
+        request.session.cycle_key()
+    print(request.session.session_key)
+    return render(request, 'products/product.html', locals())
