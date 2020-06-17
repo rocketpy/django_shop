@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Customer(models.Model):
+    customer_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=100)
@@ -78,7 +79,17 @@ class ShoppingCart(models.Model):
             print(product + " is removed !")
         else:
             print(product + " is not in the cart !")
+"""
+# custom id field
+import uuid
+from django.db import models
 
+
+class MyUUIDModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # other fields
+"""
+            
 
 #  for update use:  python manage.py makemigrations shop
 # second command:  python manage.py migrate shop
