@@ -56,3 +56,11 @@ def product(request, product_id):
         request.session.cycle_key()
     print(request.session.session_key)
     return render(request, 'products/product.html', locals())
+
+
+"""
+# get User id from auth_user table
+from django.contrib.auth.models import User
+
+User.objects.get(username=the_username).pk
+"""
