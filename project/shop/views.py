@@ -47,7 +47,7 @@ def logout(request):
 
 
 def product(request, product_id):
-    prod = Product.object.get(id=product_id)
+    prod = Product.name.get(id=product_id)
 
     session_key = request.session.session_key
     
