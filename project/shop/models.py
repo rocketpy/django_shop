@@ -6,10 +6,9 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
-    
-    
+
     def __str__(self):
-        return self.name
+        return self.first_name
 
     
 class Product(models.Model):
@@ -24,7 +23,6 @@ class Product(models.Model):
     def __str__(self):
         return 'Order %s' % self.name
 
-    
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
@@ -60,21 +58,20 @@ class ProductImage(models.Model):
 
 class ShoppingCart(models.Model):
     items_in_cart = {}
+
     def __init__(self, customer_name):
         self.customer_name = customer_name
-        
-        
+
     def add_item(self, product, price):
-        if not product in self.items_in_cart:
+        if product not in self.items_in_cart:
             self.items_in_cart[product] = price
             print(product + " is added !")
         else:
             print(product + " is already in the cart !")
-    
-    
+
     def remove_item(self, product):
         if product in self.items_in_cart:
-            del self.item_in_cart[product]
+            del self.items_in_cart[product]
             print(product + " is removed !")
         else:
             print(product + " is not in the cart !")
