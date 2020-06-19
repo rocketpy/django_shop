@@ -8,7 +8,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shop Homepage</title>
+  <title>
+      {% block title %}
+          Homepage
+      {% endblock %}
+  </title>
+
   {% load static %}
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor_homepage/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
