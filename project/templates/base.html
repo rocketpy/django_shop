@@ -7,8 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <title>
+      {% block title %}
+          Main page
+      {% endblock %}
+  </title>
 
-  <title>Shop Homepage</title>
   {% load static %}
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor_homepage/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">

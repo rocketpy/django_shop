@@ -3,7 +3,7 @@ from . models import *
 
 
 def index(request):
-    return render(request, 'templ/base.html')
+    return render(request, 'base.html')
 
 
 def about(request):
@@ -39,7 +39,7 @@ def cart(request):
 
 
 def login(request):
-    return render(request, 'templ/cart.html')
+    return render(request, 'templ/login.html')
 
 
 def logout(request):
@@ -47,7 +47,7 @@ def logout(request):
 
 
 def product(request, product_id):
-    prod = Product.name.get(id=product_id)
+    prod = Product.objects.get(id=product_id)
 
     session_key = request.session.session_key
     

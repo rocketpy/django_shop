@@ -1,6 +1,6 @@
 from django.db import models
 
-
+"""
 class Customer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -76,7 +76,7 @@ class ShoppingCart(models.Model):
         else:
             print(product + " is not in the cart !")
             
-            
+"""
 """
 # custom id field
 import uuid
