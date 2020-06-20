@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 from .models import *
 
 
@@ -39,7 +40,8 @@ def cart(request):
 
 
 def register_page(request):
-    context = {}
+    form = UserCreationForm()
+    context = {'form': form}
     return render(request, 'templ/register.html', context)
 
 
