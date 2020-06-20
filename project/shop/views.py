@@ -38,12 +38,14 @@ def cart(request):
     return render(request, 'templ/cart.html')
 
 
-def login_page(request):
-    return render(request, 'templ/login.html')
-
-
 def register_page(request):
-    return render(request, 'templ/register.html')
+    context = {}
+    return render(request, 'templ/register.html', context)
+
+
+def login_page(request):
+    context = {}
+    return render(request, 'templ/login.html', context)
 
 
 def logout(request):
@@ -51,7 +53,8 @@ def logout(request):
 
 
 def product(request, product_id):
-    prod = Product.objects.get(id=product_id)
+    products = Product.objects.all()
+    prodt = Product.objects.get(id=product_id)
 
     session_key = request.session.session_key
     
