@@ -13,5 +13,6 @@ urlpatterns = [
                path('tablets/', views.tablets, name='tablets'),
                path('cart/', views.cart, name='cart'),
                path(r'^product/(?P<product_id>\w+)/$', views.product, name='product'),
-               path('login/', views.login, name='login')
+               path('login/', views.login_page, name='login'),
+               path('register/', views.register_page, name='register')
                ]

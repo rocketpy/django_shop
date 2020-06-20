@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import *
+from .models import *
 
 
 def index(request):
@@ -38,8 +38,12 @@ def cart(request):
     return render(request, 'templ/cart.html')
 
 
-def login(request):
+def login_page(request):
     return render(request, 'templ/login.html')
+
+
+def register_page(request):
+    return render(request, 'templ/register.html')
 
 
 def logout(request):
