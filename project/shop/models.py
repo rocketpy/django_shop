@@ -1,6 +1,6 @@
 from django.db import models
 
-"""
+
 class Customer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -37,12 +37,8 @@ class ProductCategory(models.Model):
 
 
 class ProductImage(models.Model):
-    product = models.ForeignKey(Product, blank=True, null=True, default=None)
-    image = models.ImageField(upload_to='products_images/%Y%m%d', null=True)
-    # is_main = models.BooleanField(default=False)
-    # is_active = models.BooleanField(default=True)
-    # created = models.DateTimeField(auto_now_add=True, auto_now=False)
-    # updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    product = models.ForeignKey(Product)
+    image = models.ImageField(upload_to='products_images/%Y%m%d')
 
     def __str__(self):
         return '%s' % self.product.name
@@ -72,7 +68,7 @@ class ShoppingCart(models.Model):
         else:
             print(product + " is not in the cart !")
             
-"""
+
 """
 # custom id field
 import uuid
