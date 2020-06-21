@@ -23,6 +23,17 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
+        
+        
+class Orders(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=100)
+    phone_number = models.CharField(max_length=100)
+    # product ???
+    
+    def __str__(self):
+        return self.first_name
 
     
 class ProductCategory(models.Model):
