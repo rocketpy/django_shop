@@ -12,13 +12,10 @@ class Customer(models.Model):
 
     
 class Product(models.Model):
-    name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    name = models.CharField(max_length=64)
     price = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    category = models.ForeignKey(ProductCategory, blank=True, null=True, default=None)
-    description = models.TextField(blank=True, null=True, default=None)
-    # short_description = models.TextField(blank=True, null=True, default=None)
-    # is_active = models.BooleanField(default=True)
-    # discount = models.IntegerField(default=0, )
+    category = models.ForeignKey(ProductCategory)
+    description = models.TextField()
 
     def __str__(self):
         return 'Order %s' % self.name
@@ -29,8 +26,7 @@ class Product(models.Model):
 
     
 class ProductCategory(models.Model):
-    name = models.CharField(max_length=64, blank=True, null=True, default=None)
-    is_active = models.BooleanField(default=True)
+    name = models.CharField(max_length=64)
 
     def __str__(self):
         return '%s' % self.name
