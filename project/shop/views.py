@@ -20,10 +20,6 @@ def contacts(request):
     return render(request, 'templ/contacts.html')
 
 
-def items(request):
-    return render(request, 'templ/item.html')
-
-
 def notebooks(request):
     return render(request, 'templ/notebooks.html')
 
@@ -52,11 +48,11 @@ def login_page(request):
 
 
 def logout(request):
-    return render(request, 'templ/cart.html')
+    return render(request, 'templ/main.html')
 
 
 def product(request, product_id):
-    products = Product.objects.all()
+    # products = Product.objects.all()
     prodt = Product.objects.get(id=product_id)
 
     session_key = request.session.session_key
