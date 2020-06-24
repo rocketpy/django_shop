@@ -1,6 +1,9 @@
 from django.db import models
 
 
+# id = models.AutoField(primary_key=True)
+# if set primary_key=True in some field , Django don't add id 
+
 class Customer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
