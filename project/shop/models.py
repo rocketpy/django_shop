@@ -10,14 +10,17 @@ class Customer(models.Model):
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
 
+#    def __str__(self):
+#        return self.first_name
+    
     def __str__(self):
-        return self.first_name
+        return "%s %s" % (self.first_name, self.last_name)
 
     
 class Product(models.Model):
     name = models.CharField(max_length=64)
     price = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    category = models.ForeignKey(ProductCategory)
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     description = models.TextField()
 
     def __str__(self):
@@ -27,7 +30,7 @@ class Product(models.Model):
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
         
-        
+"""        
 class Orders(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -37,8 +40,9 @@ class Orders(models.Model):
     
     def __str__(self):
         return self.first_name
+"""
 
-    
+
 class ProductCategory(models.Model):
     name = models.CharField(max_length=64)
     product_id = models.ForeignKey(Product)
@@ -53,10 +57,11 @@ class ProductCategory(models.Model):
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product)
-    image = models.ImageField(upload_to='products_images/%Y%m%d')
+    url = models.URLField(max_length=max_length) 
+    # image = models.ImageField(upload_to='products_images/%Y%m%d')
 
     def __str__(self):
-        return '%s' % self.product.name
+        return '%s' % self.url
 
     class Meta:
         verbose_name = 'Image'
@@ -65,11 +70,12 @@ class ProductImage(models.Model):
 
 class ShoppingCart(models.Model):
     items_in_cart = {}
-    cart_id = models.ForeignKey(Cart)
     customer_id = models.ForeignKey(Customer)
+    product = models.ForeignKey(Product)
+    price = models.ForeignKey(Product.price)
 
-    def __init__(self, customer_name):
-        self.customer_name = customer_name
+    def __init__(self, customer_id):
+        self.customer_id = customer_id
 
     def add_item(self, product, price):
         if product not in self.items_in_cart:
