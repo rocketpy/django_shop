@@ -41,6 +41,7 @@ class Orders(models.Model):
     
 class ProductCategory(models.Model):
     name = models.CharField(max_length=64)
+    product_id = models.ForeignKey(Product)
 
     def __str__(self):
         return '%s' % self.name
@@ -64,6 +65,8 @@ class ProductImage(models.Model):
 
 class ShoppingCart(models.Model):
     items_in_cart = {}
+    cart_id = models.ForeignKey(Cart)
+    customer_id = models.ForeignKey(Customer)
 
     def __init__(self, customer_name):
         self.customer_name = customer_name
