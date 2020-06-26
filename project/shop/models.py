@@ -57,7 +57,7 @@ class ProductCategory(models.Model):
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product)
-    url = models.URLField(max_length=max_length) 
+    url = models.URLField(max_length=200) 
     # image = models.ImageField(upload_to='products_images/%Y%m%d')
 
     def __str__(self):
