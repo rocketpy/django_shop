@@ -5,7 +5,7 @@ from .models import *
 
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'templ/base.html')
 
 
 def about(request):

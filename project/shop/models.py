@@ -3,7 +3,7 @@ from django.db import models
 
 # id = models.AutoField(primary_key=True)
 # if set primary_key=True in some field , Django don't add id 
-
+"""
 class Customer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -30,7 +30,8 @@ class Product(models.Model):
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
         
-"""        
+"""
+"""
 class Orders(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -41,7 +42,7 @@ class Orders(models.Model):
     def __str__(self):
         return self.first_name
 """
-
+"""
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=64)
@@ -91,7 +92,7 @@ class ShoppingCart(models.Model):
         else:
             print(product + " is not in the cart !")
             
-
+"""
 """
 # custom id field
 import uuid
