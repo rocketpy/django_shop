@@ -6,6 +6,7 @@
 
 {% block content %}
 {% load static %}
+
 {% if user.is_authenticated %}
 <div class="text-page">
     <section>
@@ -18,8 +19,17 @@
     <p><a href="{% url 'logout' %}">logout</a></p>
 </div>
 {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Login</a>
+
+<div class="text-page">
+    <section>
+        <h2>You are not logged in !</h2>
+        <p>
+            <a href="{% url 'login' %}">Login</a>
+        </p>
+    </section>
+
+</div>
+
 {% endif %}
 
 {% endblock %}
