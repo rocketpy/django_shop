@@ -3,9 +3,8 @@
 {% block title %}
     Cart
 {% endblock %}
-
-{% block content %}
 {% load static %}
+{% block content %}
 
 {% if user.is_authenticated %}
 <div class="text-page">
@@ -20,12 +19,12 @@
 </div>
 {% else %}
 
-<div class="text-page">
+<div class="text-page" style="text-align:center; width: 100%; padding-top: 150px">
     <section>
         <h2>You are not logged in !</h2>
-        <p>
+        <h2>
             <a href="{% url 'login' %}">Login</a>
-        </p>
+        </h2>
     </section>
 
 </div>
