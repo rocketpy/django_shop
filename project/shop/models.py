@@ -1,8 +1,7 @@
 from django.db import models
 
-
 # id = models.AutoField(primary_key=True)
-# if set primary_key=True in some field , Django don't add i
+# if set primary_key=True in some field , Django don't add id field
 
 
 class Customer(models.Model):
@@ -17,33 +16,6 @@ class Customer(models.Model):
 #    def __str__(self):
 #        return "%s %s" % (self.first_name, self.last_name)
 
-    
-class Product(models.Model):
-    name = models.CharField(max_length=64)
-    price = models.DecimalField(max_digits=15, decimal_places=2, default=0)
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
-    description = models.TextField()
-
-    def __str__(self):
-        return 'Order %s' % self.name
-
-    class Meta:
-        verbose_name = 'Product'
-        verbose_name_plural = 'Products'
-        
-
-"""
-class Orders(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField(max_length=100)
-    phone_number = models.CharField(max_length=100)
-    # product ???
-    
-    def __str__(self):
-        return self.first_name
-"""
-
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=64)
@@ -57,8 +29,22 @@ class ProductCategory(models.Model):
         verbose_name_plural = 'Categories'
 
 
+class Product(models.Model):
+    name = models.CharField(max_length=64)
+    price = models.DecimalField(max_digits=15, decimal_places=2, default=0)
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+    description = models.TextField()
+
+    def __str__(self):
+        return 'Order %s' % self.name
+
+    class Meta:
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'
+
+
 class ProductImage(models.Model):
-    product = models.ForeignKey(Product)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     url = models.URLField(max_length=200) 
     # image = models.ImageField(upload_to='products_images/%Y%m%d')
 
@@ -92,7 +78,20 @@ class ShoppingCart(models.Model):
             print(product + " is removed !")
         else:
             print(product + " is not in the cart !")
-            
+
+
+
+"""
+class Orders(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=100)
+    phone_number = models.CharField(max_length=100)
+    # product ???
+
+    def __str__(self):
+        return self.first_name
+"""
 
 """
 # custom id field
