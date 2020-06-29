@@ -36,6 +36,16 @@ def cart(request):
     return render(request, 'templ/cart.html')
 
 
+def category(request):
+    products = ProductCategory.name.all()
+    context = {
+        'customCSS': '/static/css/product_list.min.css',
+        'title': ProductCategory.name,
+        'products': products,
+    }
+    return render(request, 'templ/main.html', context)
+
+
 def register_page(request):
     form = UserCreationForm()
     context = {'form': form}
