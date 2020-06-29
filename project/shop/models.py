@@ -33,6 +33,7 @@ class Product(models.Model):
     name = models.CharField(max_length=64)
     price = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+    img_url = models.URLField(max_length=200)
     description = models.TextField()
 
     def __str__(self):
@@ -42,11 +43,11 @@ class Product(models.Model):
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
-
-class ProductImage(models.Model):
+"""
+ class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     url = models.URLField(max_length=200) 
-    # image = models.ImageField(upload_to='products_images/%Y%m%d')
+    image = models.ImageField(upload_to='products_images/%Y%m%d')
 
     def __str__(self):
         return '%s' % self.url
@@ -54,6 +55,7 @@ class ProductImage(models.Model):
     class Meta:
         verbose_name = 'Image'
         verbose_name_plural = 'Images'
+"""
 
 
 class ShoppingCart(models.Model):
