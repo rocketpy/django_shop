@@ -54,7 +54,6 @@
       </div>
     </div>
   </nav>
-{% block content %}
   <!-- Page Content -->
   <div class="container">
 
@@ -64,14 +63,15 @@
 
         <h1 class="my-4">E'store</h1>
         <div class="list-group">
+          {% block content categories%}
           <a href="{% url 'notebooks' %}" class="list-group-item">Notebooks</a>
           <a href="{% url 'smartphones' %}" class="list-group-item">Smartphones</a>
           <a href="{% url 'tablets' %}" class="list-group-item">Tablets</a>
+          {% endblock %}
         </div>
 
       </div>
       <!-- /.col-lg-3 -->
-{% endblock %}
 
       <div class="col-lg-9">
 
@@ -103,7 +103,7 @@
         </div>
 
         <div class="row">
-
+{% block content products %}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <a href="#"><img class="card-img-top" src="{% static 'images/img_n1.jpg' %}" alt=""></a>
@@ -199,7 +199,7 @@
               </div>
             </div>
           </div>
-
+{% endblock %}
         </div>
         <!-- /.row -->
 
