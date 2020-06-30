@@ -8,6 +8,16 @@ def index(request):
     return render(request, 'templ/base.html')
 
 
+def main(request):
+    products = ProductCategory.name.all()
+    context = {
+               'customCSS': '/static/css/shop-homepage.css',
+               'title': ProductCategory.name,
+               'products': products,
+               }
+    return render(request, 'templ/main.html', context)
+
+
 def about(request):
     return render(request, 'templ/about.html')
 
@@ -39,10 +49,10 @@ def cart(request):
 def category(request):
     products = ProductCategory.name.all()
     context = {
-        'customCSS': '/static/css/product_list.min.css',
-        'title': ProductCategory.name,
-        'products': products,
-    }
+               'customCSS': '/static/css/shop-homepage.css',
+               'title': ProductCategory.name,
+               'products': products,
+               }
     return render(request, 'templ/main.html', context)
 
 
