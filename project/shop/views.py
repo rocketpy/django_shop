@@ -10,10 +10,12 @@ def index(request):
 
 def main(request):
     products = ProductCategory.name.all()
+    elements = ProductCategory.name.count()
     context = {
                'customCSS': '/static/css/shop-homepage.css',
                'title': ProductCategory.name,
                'products': products,
+               'elements': elements,
                }
     return render(request, 'templ/main.html', context)
 
