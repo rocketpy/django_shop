@@ -43,6 +43,16 @@ class Product(models.Model):
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
+
+class CartItem(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    qnty = models.PositiveIntegerField(default=1)
+    item_total = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
+
+    def __str__(self):
+        return "Cart item for product {0}".format(self.product.title)
+
+
 """
  class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -60,10 +70,12 @@ class Product(models.Model):
 
 class ShoppingCart(models.Model):
     items_in_cart = {}
-    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    price = models.ForeignKey(Product, on_delete=models.CASCADE)
+    items = models.ManyToManyField(CartItem, blank=True)
     cart_total = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
+    # customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    # product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    # price = models.ForeignKey(Product, on_delete=models.CASCADE)
+    # cart_total = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
 
     def __str__(self, customer_id):
         self.customer_id = customer_id
