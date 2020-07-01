@@ -19,7 +19,7 @@ class Customer(models.Model):
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=64)
-    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+    # product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
         return '%s' % self.name
@@ -62,9 +62,10 @@ class ShoppingCart(models.Model):
     items_in_cart = {}
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    price = models.ForeignKey(Product.price, on_delete=models.CASCADE)
+    price = models.ForeignKey(Product, on_delete=models.CASCADE)
+    cart_total = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
 
-    def __init__(self, customer_id):
+    def __str__(self, customer_id):
         self.customer_id = customer_id
 
     def add_item(self, product, price):
