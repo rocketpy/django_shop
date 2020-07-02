@@ -70,6 +70,7 @@ class CartItem(models.Model):
 
 class ShoppingCart(models.Model):
     items_in_cart = {}
+    id = models.AutoField(primary_key=True)
     items = models.ManyToManyField(CartItem, blank=True)
     cart_total = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
     # customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
@@ -77,8 +78,8 @@ class ShoppingCart(models.Model):
     # price = models.ForeignKey(Product, on_delete=models.CASCADE)
     # cart_total = models.DecimalField(max_digits=9, decimal_places=2, default=0.00)
 
-    def __str__(self, customer_id):
-        self.customer_id = customer_id
+    def __str__(self):  # customer_id
+        return self.id  # self.customer_id = customer_id
 
     def add_item(self, product, price):
         if product not in self.items_in_cart:
@@ -93,7 +94,6 @@ class ShoppingCart(models.Model):
             print(product + " is removed !")
         else:
             print(product + " is not in the cart !")
-
 
 
 """
