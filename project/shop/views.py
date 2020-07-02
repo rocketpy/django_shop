@@ -65,11 +65,29 @@ def register_page(request):
 
 
 def login_page(request):
-    context = {}
-    return render(request, 'templ/login.html', context)
+    # context = {}
+    if request.user.is_authenticated:
+        return redirect('main')
+    else:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('main')
+            else:
+                messages.info(request, 'Username or password is incorrect')
+
+            context = {}
+            return render(request, 'accounts/login.html', context)
+    #breturn render(request, 'templ/login.html', context)
 
 
 def logout(request):
+    logout(request)
     return render(request, 'templ/main.html')
 
 
