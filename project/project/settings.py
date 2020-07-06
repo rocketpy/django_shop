@@ -137,5 +137,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'email_password'
 EMAIL_PORT = 587
+
+
+# for 500 error
+DEFAULT_FROM_EMAIL = 'your.email@example.com'
+ADMINS = [('<Your name>', 'your.email@example.com')]
 """
 
