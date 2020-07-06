@@ -126,6 +126,7 @@ def send_email(date):
     email = EmailMessage('Subject', 'Body', to=['your@email.com'])
     email.send()
     return render()
+# send_mail('<Your subject>', '<Your message>', 'from@example.com', ['to@example.com'])
 
 
 """
