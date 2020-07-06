@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
 from django.contrib import messages
+from django.core.mail import EmailMessage
 
 
 def index(request):
@@ -118,6 +119,10 @@ def product(request, product_id):
         request.session.cycle_key()
     print(request.session.session_key)
     return render(request, 'products/product.html', locals())
+
+# for django.core.mail
+email = EmailMessage('Subject', 'Body', to=['your@email.com'])
+email.send()
 
 
 """
