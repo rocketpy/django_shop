@@ -120,9 +120,12 @@ def product(request, product_id):
     print(request.session.session_key)
     return render(request, 'products/product.html', locals())
 
+
 # for django.core.mail
-email = EmailMessage('Subject', 'Body', to=['your@email.com'])
-email.send()
+def send_email(date):
+    email = EmailMessage('Subject', 'Body', to=['your@email.com'])
+    email.send()
+    return render()
 
 
 """
